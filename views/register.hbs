@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/StylehomePageIndex.css" />
+    <title>Lets Kiddo!</title>
+</head>
+<body>
+
+
+    <nav>
+        <h4>Lets Kiddo!!</h4>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+        </ul>
+    </nav>
+
+    <form action="/auth/register" method="POST">
+        <label for="UserID">Set your ID:</label><br>
+        <input type="text" id="UserID" name="UserID"><br>
+
+        <label for="Name">Set your real name:</label><br>
+        <input type="text" id="Name" name="Name"><br>
+
+        <label for="DescribeYourself">Describe Yourself:</label><br>
+        <input type="text" id="DescribeYourself" name="DescribeYourself"><br>
+
+        <label for="PictureUrl">Give a link to your cool Picture:</label><br>
+        <input type="text" id="PictureUrl" name="PictureUrl"><br>
+
+
+        <label for="AvatarName">Set your Avatar name:</label><br>
+        <input type="text" id="AvatarName" name="AvatarName"><br>
+
+        <p>Are you a :</p>
+        <input type="radio" id="male" name="sex" value="male">
+        <label for="male">Boy</label><br>
+        <input type="radio" id="Female" name="sex" value="Female">
+        <label for="Female">Girl</label><br>
+
+
+        <br>
+
+        <p>Which age group are you in?</p>
+        <input type="radio" id="Toddler" name="AgeGroup" value="Toddler">
+        <label for="Toddler">(Toddler)5 - 7</label><br>
+        <input type="radio" id="Young" name="AgeGroup" value="Young">
+        <label for="Young">(Young)8 - 13</label><br>
+        <input type="radio" id="Senior" name="AgeGroup" value="Senior">
+        <label for="Senior">(Senior)14-17</label><br><br>
+
+        <label for="Password">Set a strong Password:</label><br>
+        <input type="text" id="Password" name="Password"><br>
+
+        <label for="Password">Confirm your Password:</label><br>
+        <input type="text" id="confirm_password" name="confirm_password"><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+    {{#if message }}
+    <h4 class="alert alert-danger mt-4">{{message}}</h4>
+    {{/if}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</body>
+</html>
+

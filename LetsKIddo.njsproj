@@ -29,21 +29,34 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".env">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="app.js" />
-    <Content Include="routes\index.js" />
-    <Content Include="routes\users.js" />
+    <Content Include="controllers\auth.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\indexStyle.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="routes\auth.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="routes\pages.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="package.json" />
-    <Content Include="public\stylesheets\main.css" />
     <Content Include="README.md" />
-    <Content Include="views\index.pug" />
-    <Content Include="views\layout.pug" />
-    <Content Include="views\error.pug" />
+    <Content Include="views\index.hbs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\register.hbs">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="controllers\" />
     <Folder Include="public\" />
-    <Folder Include="public\images\" />
-    <Folder Include="public\javascripts\" />
-    <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
     <Folder Include="views\" />
   </ItemGroup>
