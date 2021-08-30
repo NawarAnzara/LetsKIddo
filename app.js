@@ -8,9 +8,36 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const { Connection, Request } = require("tedious");
 
+// Create connection to database
+const config = {
+    authentication: {
+        options: {
+            userName: "nawarshahsaba", // update me
+            password: "BlogPost1" // update me
+        },
+        type: "default"
+    },
+    server: "nawarshahsaba.database.windows.net", // update me
+    options: {
+        database: "nodejssignup", //update me
+        encrypt: true
+    }
+};
 
+const connection = new Connection(config);
 
+// Attempt to connect and execute queries if connection goes through
+connection.on("connect", err => {
+    if (err) {
+        console.error(err.message);
+    } else {
+        console.log("MYSQL connected..");
+    }
+});
+
+connection.connect();
 dotenv.config({ path: './.env' });
 const app = express();
 const publicDirectory = path.join(__dirname, './public');
@@ -18,7 +45,7 @@ const publicDirectory = path.join(__dirname, './public');
 app.use(express.static(publicDirectory));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-const db = mysql.createConnection({
+/*const db = mysql.createConnection({
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
@@ -29,12 +56,13 @@ app.set('view engine', 'hbs');
 
 db.connect(function (error) {
     if (error) {
+        console.log("Your Issues are actually here, bruh!")
         console.log(error)
 
     } else {
         console.log("MYSQL connected..")
     }
-});
+});*/
 //define routes
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
