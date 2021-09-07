@@ -9,5 +9,11 @@ Router.get("/register", function(req, res){
 
     res.render(`register`)
 });
+Router.get("/login", function (req, res) {
+    res.render("login")
+
+
+
+});
 
 module.exports = Router;
