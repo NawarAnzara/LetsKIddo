@@ -19,7 +19,7 @@
             <li><a href="/register">Register</a></li>
         </ul>
     </nav>
-    <form action="/auth/register" method="POST">
+    <form action="/auth/login" method="post">
         <label for="UserID"> ID:</label><br>
         <input type="text" id="UserID" name="UserID"><br>
 
@@ -28,13 +28,14 @@
         <label for="Password"> Password:</label><br>
         <input type="text" id="Password" name="Password"><br>
 
-        
-        
+
+
 
         <button type="submit">Login</button>
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
+    {{#if message }}
+    <h4 class="alert alert-danger mt-4">{{message}}</h4>
+    {{/if}}
 
 
 </body>
