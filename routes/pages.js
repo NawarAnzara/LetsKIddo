@@ -11,9 +11,9 @@ Router.get("/register", function(req, res){
 });
 Router.get("/login", function (req, res) {
     res.render("login")
-
-
-
 });
 
+Router.get("/HomePage", function (req, res) {
+    res.render("HomePage")
+});
 module.exports = Router;

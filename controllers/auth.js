@@ -44,7 +44,7 @@ exports.login = function (req, res) {
                 message: 'ID or Password is incorrect'
             });
         } else{
-             res.render("\index", {
+             res.render("\HomePage", {
                  UserID: results[0].UserID,
                  Name: results[0].Name,
                  DescribeYourself: results[0].DescribeYourself,

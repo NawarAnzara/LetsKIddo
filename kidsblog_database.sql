@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2021 at 10:25 PM
+-- Generation Time: Sep 08, 2021 at 10:53 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -37,6 +37,14 @@ CREATE TABLE `users` (
   `AgeGroup` varchar(300) NOT NULL,
   `Password` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`UserID`, `Name`, `DescribeYourself`, `PictureUrl`, `AvatarName`, `sex`, `AgeGroup`, `Password`) VALUES
+('123', 'Haron Samber', 'I like to play football.', 'https://i.ibb.co/M5Pcnw6/Kids.png', 'Cosmos', 'male', 'Toddler', '$2a$08$xM1gkcAIpRKpveQ0cT43bexzy8kLMxSjaHcT1YR8POJu8YQnqnMXq'),
+('bla', 'bla bla', 'bla bla bla', 'bla bla bla', 'ok', 'Female', 'Young', '$2a$08$W2L3Vop7s1mA0RtrogYMkOxzag8uQe/AsFBwPZHXTwqZWEKXMJ0SC');
 
 --
 -- Indexes for dumped tables
