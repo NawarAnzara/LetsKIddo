@@ -3,6 +3,7 @@ const mysql = require('mysql');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const auth = express.Router();
+let User = require('../controllers/auth');
 
 
 
@@ -43,25 +44,110 @@ exports.login = function (req, res) {
             res.status(401).render('login', {
                 message: 'ID or Password is incorrect'
             });
-        } else{
-             res.render("\HomePage", {
-                 UserID: results[0].UserID,
-                 Name: results[0].Name,
-                 DescribeYourself: results[0].DescribeYourself,
-                 PictureUrl: results[0].PictureUrl,
-                 AvatarName: results[0].AvatarName,
-                 sex: results[0].sex,
-                 AgeGroup: results[0].AgeGroup
+         } else {
+             db.query("SELECT * FROM blog", async function (error, results) {
+                 if (error) {
+                     console.log(error);
+                 }
+                 console.log(results.length);
+                 var blogContentData = [];
+                 var blogPicUrlData = [];
+                 var blogNameData = [];
+                 
+                 for (var i = 0; i < results.length; ++i)
+             {
+                     blogContentData[i] = results[i].blogContent;
+                     blogPicUrlData[i] = results[i].PictureUrl;
+                     blogNameData[i] = results[i].Name;
+                 }
+                 console.log("Successful");
+                 
+              
+                 res.render("\HomePage", {
+                     UserID: User.UserID,
+                     Name: User.Name,
+                     DescribeYourself: User.DescribeYourself,
+                     PictureUrl: User.PictureUrl,
+                     AvatarName: User.AvatarName,
+                     sex: User.sex,
+                     AgeGroup: User.Agegroup,
+                     blogContentData: blogContentData,
+                     blogPicUrlData: blogPicUrlData,
+                     blogNameData: blogNameData
+
+
+                 });
+
+
+
 
              });
+             
+            
         }
 
     });
 
-        
+}
+
+exports.games = function (req, res) { }
+exports.friendList = function (req, res) { }
+exports.learnFun = function (req, res) { }
+exports.profile = function (req, res) { }
 
 
-    
+exports.HomePage = function (req, res) {
+    console.log(req.body);
+    console.log(User.UserID);
+    const UserID = User.UserID;
+    const blogContent = req.body.user_activity;
+    const countStar = 0;
+    const PictureUrl = User.PictureUrl;
+    const Name = User.Name;
+    db.query('INSERT INTO blog(UserID, countStar, blogContent, Name, PictureUrl) VALUES(?,?,?,?,?)', [UserID, countStar, blogContent, Name, PictureUrl], function (error, results) {
+
+        if (error) {
+            console.log(error)
+        } else {
+            console.log(results);
+            db.query("SELECT * FROM blog", async function (error, results) {
+                if (error) {
+                    console.log(error);
+                }
+                console.log(results.length);
+                var blogContentData = [];
+                var blogPicUrlData = [];
+                var blogNameData = [];
+
+                for (var i = 0; i < results.length; ++i) {
+                    blogContentData[i] = results[i].blogContent;
+                    blogPicUrlData[i] = results[i].PictureUrl;
+                    blogNameData[i] = results[i].Name;
+                }
+                console.log("Successful");
+
+
+                res.render("\HomePage", {
+                    message: "Blog Posted!",
+                    UserID: User.UserID,
+                    Name: User.Name,
+                    DescribeYourself: User.DescribeYourself,
+                    PictureUrl: User.PictureUrl,
+                    AvatarName: User.AvatarName,
+                    sex: User.sex,
+                    AgeGroup: User.Agegroup,
+                    blogContentData: blogContentData,
+                    blogPicUrlData: blogPicUrlData,
+                    blogNameData: blogNameData
+
+
+                });
+            });
+
+        }
+    });
+
+
 
 
 }

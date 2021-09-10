@@ -11,27 +11,25 @@
 <body>
 
 
-    <nav>
-        <h4>Lets Kiddo!!</h4>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">Register</a></li>
-        </ul>
-    </nav>
-    <form action="/auth/login" method="post">
-        <label for="UserID"> ID:</label><br>
-        <input type="text" id="UserID" name="UserID"><br>
+    <div id="letsKiddoTitle">Lets Kiddo!</div>
+    <div id="moveButtons">
+        <button class="btn second" onclick="window.location.href='/';"><strong>Home</strong></button>
+        <button class="btn second" onclick="window.location.href='/login';"><strong>Login</strong></button>
+        <button class="btn second" onclick="window.location.href='/register';"><strong>Register</strong></button>
+    </div> 
+    <form class="loginForm" action="/auth/login" method="post">
+        <label for="UserID"style="font-family: 'Architects Daughter', cursive;"><strong>Your ID please?</strong></label><br>
+        <input type="text" id="UserID" name="UserID"><br><br>
 
 
 
-        <label for="Password"> Password:</label><br>
-        <input type="text" id="Password" name="Password"><br>
+        <label for="Password" style="font-family: 'Architects Daughter', cursive;"><strong>What about your Password?</strong> </label><br>
+        <input type="text" id="Password" name="Password"><br><br>
 
 
 
 
-        <button type="submit">Login</button>
+        <button class="postButton2" type="submit">Login</button>
     </form>
     {{#if message }}
     <h4 class="alert alert-danger mt-4">{{message}}</h4>
