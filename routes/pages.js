@@ -18,7 +18,7 @@ const db = mysql.createConnection({
 
 Router.get("/", function(req, res){
 
-    res.render(`index`)
+    res.render(`landing`)
 });
 Router.get("/register", function(req, res){
 

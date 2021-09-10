@@ -1,0 +1,67 @@
+
+#letsKiddoTitle {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 600%;
+    text-align: center;
+    background-color: yellow;
+    text-shadow: 5px 5px white;
+    color: black;
+    box-shadow: 5px 10px 5px black;
+}
+
+body {
+    background-image: url("https://i.ibb.co/T43cWZ9/kids.jpg");
+}
+
+.postButton2 {
+    background-color: yellow;
+    border: 5px solid black;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 35px;
+    margin: 20px 500px;
+    border-radius: 70%;
+}
+
+    .postButton2:hover {
+        background-color: lawngreen;
+        outline: 10;
+    }
+
+
+
+
+
+
+
+
+nav {
+    background-color: orange;
+    color: darkblue;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    nav li {
+        list-style: none;
+    }
+
+        nav li a {
+            color: red;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 8px;
+        }
+
+            nav li a:hover {
+                color: white;
+                text-decoration: none;
+            }
