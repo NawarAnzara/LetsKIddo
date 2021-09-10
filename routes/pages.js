@@ -150,4 +150,8 @@ Router.get("/profile", function (req, res) {
 
     })
 });
+
+Router.get("/games", function (req, res) {
+    res.render("games")
+});
 module.exports = Router;
