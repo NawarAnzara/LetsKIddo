@@ -13,6 +13,7 @@ body {
     background-image: url("https://i.ibb.co/T43cWZ9/kids.jpg");
 }
 
+
 .postButton2 {
     background-color: yellow;
     border: 5px solid black;
@@ -22,6 +23,7 @@ body {
     font-size: 35px;
     margin: 20px 500px;
     border-radius: 70%;
+
 }
 
     .postButton2:hover {
