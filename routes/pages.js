@@ -134,6 +134,20 @@ Router.get("/learnFun", function (req, res) {
 
     })
 });
+Router.get("/horoscope", function (req, res) {
+    res.render("horoscope", {
+        UserID: User.UserID,
+        Name: User.Name,
+        DescribeYourself: User.DescribeYourself,
+        PictureUrl: User.PictureUrl,
+        AvatarName: User.AvatarName,
+        sex: User.sex,
+        AgeGroup: User.Agegroup
+
+
+
+    })
+});
 
 Router.get("/profile", function (req, res) {
 

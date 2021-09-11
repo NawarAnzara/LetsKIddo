@@ -20,8 +20,9 @@ body {
     padding: 20px;
     text-align: center;
     font-size: 35px;
-    margin: 20px 500px;
+    margin: 25px 600px;
     border-radius: 70%;
+    box-shadow: 5px 10px 10px black;
 }
 
     .postButton2:hover {

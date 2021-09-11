@@ -91,6 +91,7 @@ exports.login = function (req, res) {
 }
 
 exports.games = function (req, res) { }
+exports.horoscope = function (req, res) { }
 exports.friendList = function (req, res) { }
 exports.learnFun = function (req, res) { }
 exports.profile = function (req, res) { }

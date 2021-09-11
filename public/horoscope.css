@@ -53,21 +53,21 @@ canvas {
 
 body {
     background-color: lightskyblue;
-    height: 200%;
+    background-image: url("https://i.ibb.co/xC3vNCc/horoscope.jpg");
+    height: 100vh;
     margin-bottom: 360px;
-
+    
 }
+
 .postButton2 {
     background-color: lawngreen;
     border: 5px solid black;
     color: black;
     padding: 20px;
     text-align: center;
-    
     font-size: 20px;
     margin: 4px 500px;
     border-radius: 12px;
-    
 }
 
     .postButton2:hover {
@@ -297,3 +297,46 @@ nav {
 .default-style .ui-bordered {
     border: 1px solid rgba(24,28,33,0.06);
 }
+
+.loginForm {
+    background-color: yellow;
+    text-align: center;
+    width: 400px;
+    height: 150px;
+    margin: 100px 0px 0px 420px; /*top, right, bottom, left*/
+    box-shadow: 5px 10px 5px black;
+    border: 10px solid black;
+}
+
+.loginForm2 {
+    background-color: yellow;
+    text-align: center;
+    width: 550px;
+    height: 1000px;
+    margin: 0px 0px 0px 400px; /*top, right, bottom, left*/
+    box-shadow: 5px 10px 5px #888888;
+    border: 10px solid black;
+}
+
+.formFields {
+    width: 300px;
+    height: 50px;
+    box-shadow: 5px 10px #888888;
+}
+
+.postButton2 {
+    background-color: yellow;
+    border: 5px solid black;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    margin: 15px 10px 20px 25px;
+    border-radius: 70%;
+    box-shadow: 5px 10px black;
+}
+
+    .postButton2:hover {
+        background-color: lawngreen;
+        outline: 10;
+    }
