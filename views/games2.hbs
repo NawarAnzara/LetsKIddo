@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/games.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/games.js"></script>
+    <title>Lets Kiddo!</title>
+</head>
+<body>
+
+
+    <nav>
+
+
+        <h4 id="letsKiddoTitle">Lets Kiddo!</h4>
+
+        <div class="user-wrapper">
+            <img src="{{PictureUrl}}" alt="Sadita ahmed" width="30px" height="30px">
+            <div>
+                <h4>{{Name}}</h4>
+                <small> {{AgeGroup}}, {{UserID}} </small>
+            </div>
+
+        </div>
+
+
+    </nav>
+    <div style=" background-color: orangered;">
+        <button class="btn second" onclick="window.location.href='/HomePage';"><strong>Home</strong></button>
+        <button class="btn second" onclick="window.location.href='/friendList';"><strong>Friends list</strong></button>
+        <button class="btn second" onclick="window.location.href='/games';"><strong>Games</strong></button>
+        <button class="btn second" onclick="window.location.href='/learnFun';"><strong>Learn fun</strong></button>
+        <button class="btn second" onclick="window.location.href='/profile';"><strong>Profile</strong></button>
+        <button class="btn second" onclick="window.location.href='/horoscope';"><strong>horoscope</strong></button>
+        <button class="btn second" onclick="window.location.href='/';"><strong>Log Out</strong></button>
+
+    </div>
+
+    <h1 style="text-align:center; background-color: yellow;">Falling ball game</h1>
+
+    <button class="gameButton" onclick="window.location.href='https://www.friv5online.com/';"><strong>Play more games</strong></button>
+
+    <br><br>
+
+    <div id="game">
+        <div id="character"></div>
+    </div>
+
+    <script>
+        var character = document.getElementById("character");
+        var game = document.getElementById("game");
+        var interval;
+        var both = 0;
+        var counter = 0;
+        var currentBlocks = [];
+
+        function moveLeft() {
+            var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
+            if (left > 0) {
+                character.style.left = left - 2 + "px";
+            }
+        }
+        function moveRight() {
+            var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
+            if (left < 380) {
+                character.style.left = left + 2 + "px";
+            }
+        }
+        document.addEventListener("keydown", event => {
+            if (both == 0) {
+                both++;
+                if (event.key === "ArrowLeft") {
+                    interval = setInterval(moveLeft, 1);
+                }
+                if (event.key === "ArrowRight") {
+                    interval = setInterval(moveRight, 1);
+                }
+            }
+        });
+        document.addEventListener("keyup", event => {
+            clearInterval(interval);
+            both = 0;
+        });
+
+        var blocks = setInterval(function () {
+            var blockLast = document.getElementById("block" + (counter - 1));
+            var holeLast = document.getElementById("hole" + (counter - 1));
+            if (counter > 0) {
+                var blockLastTop = parseInt(window.getComputedStyle(blockLast).getPropertyValue("top"));
+                var holeLastTop = parseInt(window.getComputedStyle(holeLast).getPropertyValue("top"));
+            }
+            if (blockLastTop < 400 || counter == 0) {
+                var block = document.createElement("div");
+                var hole = document.createElement("div");
+                block.setAttribute("class", "block");
+                hole.setAttribute("class", "hole");
+                block.setAttribute("id", "block" + counter);
+                hole.setAttribute("id", "hole" + counter);
+                block.style.top = blockLastTop + 100 + "px";
+                hole.style.top = holeLastTop + 100 + "px";
+                var random = Math.floor(Math.random() * 360);
+                hole.style.left = random + "px";
+                game.appendChild(block);
+                game.appendChild(hole);
+                currentBlocks.push(counter);
+                counter++;
+            }
+            var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+            var characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
+            var drop = 0;
+            if (characterTop <= 0) {
+                alert("Game over. Score: " + (counter - 9));
+                clearInterval(blocks);
+                location.reload();
+            }
+            for (var i = 0; i < currentBlocks.length; i++) {
+                let current = currentBlocks[i];
+                let iblock = document.getElementById("block" + current);
+                let ihole = document.getElementById("hole" + current);
+                let iblockTop = parseFloat(window.getComputedStyle(iblock).getPropertyValue("top"));
+                let iholeLeft = parseFloat(window.getComputedStyle(ihole).getPropertyValue("left"));
+                iblock.style.top = iblockTop - 0.5 + "px";
+                ihole.style.top = iblockTop - 0.5 + "px";
+                if (iblockTop < -20) {
+                    currentBlocks.shift();
+                    iblock.remove();
+                    ihole.remove();
+                }
+                if (iblockTop - 20 < characterTop && iblockTop > characterTop) {
+                    drop++;
+                    if (iholeLeft <= characterLeft && iholeLeft + 20 >= characterLeft) {
+                        drop = 0;
+                    }
+                }
+            }
+            if (drop == 0) {
+                if (characterTop < 480) {
+                    character.style.top = characterTop + 2 + "px";
+                }
+            } else {
+                character.style.top = characterTop - 0.5 + "px";
+            }
+        }, 1);
+    </script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

@@ -10,14 +10,33 @@ canvas {
 }
 
 #snakeGame {
-    box-shadow: 5px 10px #888888;
-    position: absolute;
-    top: 500px;
-    left: 400px
+    /*box-shadow: 5px 10px #888888; */
+    position: relative;
+    
+    bottom: 40px;
+    left: 20px;
+}
+
+.gameButton {
+    background-color: lawngreen;
+    border: 5px solid black;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    /*margin ta top/buttom & left right*/
+    /*margin: 20px 900px;*/
+    position: relative;
+    top: 30px;
+    left: 900px;
+    border-radius: 12px;
+}
+.gameButton:hover{
+    background-color: yellow;
+    outline: 80;
 }
 
 /*End of Pac man games*/
-
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
     width: 50%;
@@ -296,4 +315,55 @@ nav {
 
 .default-style .ui-bordered {
     border: 1px solid rgba(24,28,33,0.06);
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /*background-color: lightskyblue;*/
+    height: 200%;
+}
+
+
+#game {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    top: 200px;
+}
+
+#character {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    top: 400px;
+    left: 190px;
+    z-index: 1000000;
+}
+
+.block {
+    width: 400px;
+    height: 20px;
+    background-color: black;
+    position: relative;
+    top: 100px;
+    margin-top: -20px;
+}
+
+.hole {
+    width: 40px;
+    height: 20px;
+    background-color: white;
+    position: relative;
+    top: 100px;
+    margin-top: -20px;
 }

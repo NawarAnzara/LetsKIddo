@@ -91,7 +91,39 @@ exports.login = function (req, res) {
 }
 
 exports.games = function (req, res) { }
-exports.horoscope = function (req, res) { }
+exports.games2 = function (req, res) { }
+exports.horoscope = function (req, res) {
+    console.log('test1');
+    console.log(req.body);
+    const horoscopeType = req.body.horoscopeType;
+    module.exports.horoscopeType = horoscopeType;
+
+
+    db.query("SELECT serialNo, horoscopeType, horoscopeDes from horoscope WHERE horoscopeType = ?", [horoscopeType], async function (error, results) {
+        if (error) {
+            console.log(error);
+        }
+        console.log(results);
+        const horoscopeDes = results[0].horoscopeDes;
+        module.exports.horoscopeDes = horoscopeDes;
+       
+                res.render("\horoscope", {
+                    UserID: User.UserID,
+                    Name: User.Name,
+                    DescribeYourself: User.DescribeYourself,
+                    PictureUrl: User.PictureUrl,
+                    AvatarName: User.AvatarName,
+                    sex: User.sex,
+                    AgeGroup: User.Agegroup,
+                    horoscopeDes: horoscopeDes
+
+
+                });
+    }); 
+
+}
+
+
 exports.friendList = function (req, res) { }
 exports.learnFun = function (req, res) { }
 exports.profile = function (req, res) { }

@@ -120,6 +120,22 @@ Router.get("/games", function (req, res) {
 
     })
 });
+
+Router.get("/games2", function (req, res) {
+    res.render("games2", {
+        UserID: User.UserID,
+        Name: User.Name,
+        DescribeYourself: User.DescribeYourself,
+        PictureUrl: User.PictureUrl,
+        AvatarName: User.AvatarName,
+        sex: User.sex,
+        AgeGroup: User.Agegroup
+
+
+
+    })
+});
+
 Router.get("/learnFun", function (req, res) {
     res.render("learnFun", {
         UserID: User.UserID,
@@ -142,7 +158,8 @@ Router.get("/horoscope", function (req, res) {
         PictureUrl: User.PictureUrl,
         AvatarName: User.AvatarName,
         sex: User.sex,
-        AgeGroup: User.Agegroup
+        AgeGroup: User.Agegroup,
+        horescopeDes: User.horescopeDes
 
 
 
@@ -165,7 +182,5 @@ Router.get("/profile", function (req, res) {
     })
 });
 
-Router.get("/games", function (req, res) {
-    res.render("games")
-});
+
 module.exports = Router;
