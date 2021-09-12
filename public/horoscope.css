@@ -10,33 +10,14 @@ canvas {
 }
 
 #snakeGame {
-    /*box-shadow: 5px 10px #888888; */
-    position: relative;
-    
-    bottom: 40px;
-    left: 20px;
-}
-
-.gameButton {
-    background-color: lawngreen;
-    border: 5px solid black;
-    color: black;
-    padding: 10px;
-    text-align: center;
-    font-size: 20px;
-    /*margin ta top/buttom & left right*/
-    /*margin: 20px 900px;*/
-    position: relative;
-    top: 30px;
-    left: 900px;
-    border-radius: 12px;
-}
-.gameButton:hover{
-    background-color: yellow;
-    outline: 80;
+    box-shadow: 5px 10px #888888;
+    position: absolute;
+    top: 500px;
+    left: 400px
 }
 
 /*End of Pac man games*/
+
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
     width: 50%;
@@ -72,21 +53,34 @@ canvas {
 
 body {
     background-color: lightskyblue;
-    height: 200%;
+    background-image: url("https://i.ibb.co/xC3vNCc/horoscope.jpg");
+    height: 100vh;
     margin-bottom: 360px;
-
+    
 }
+
+.horoscopeDes {
+    background-color: #CF9FFF;
+    position: relative;
+    top: 200px;
+    left: 200px;
+    padding: 50px;
+    width: 800px;
+    height: 290px;
+    border: 5px solid black;
+    font-family: 'Architects Daughter', cursive;
+    box-shadow: 10px 18px black;
+}
+
 .postButton2 {
     background-color: lawngreen;
     border: 5px solid black;
     color: black;
     padding: 20px;
     text-align: center;
-    
     font-size: 20px;
     margin: 4px 500px;
     border-radius: 12px;
-    
 }
 
     .postButton2:hover {
@@ -317,53 +311,45 @@ nav {
     border: 1px solid rgba(24,28,33,0.06);
 }
 
-
-* {
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    /*background-color: lightskyblue;*/
-    height: 200%;
-}
-
-
-#game {
+.loginForm {
+    background-color: yellow;
+    text-align: center;
     width: 400px;
-    height: 400px;
-    border: 1px solid black;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    top: 200px;
+    height: 150px;
+    margin: 100px 0px 0px 420px; /*top, right, bottom, left*/
+    box-shadow: 5px 10px 5px black;
+    border: 10px solid black;
 }
 
-#character {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50%;
-    position: relative;
-    top: 400px;
-    left: 190px;
-    z-index: 1000000;
+.loginForm2 {
+    background-color: yellow;
+    text-align: center;
+    width: 550px;
+    height: 1000px;
+    margin: 0px 0px 0px 400px; /*top, right, bottom, left*/
+    box-shadow: 5px 10px 5px #888888;
+    border: 10px solid black;
 }
 
-.block {
-    width: 400px;
-    height: 20px;
-    background-color: black;
-    position: relative;
-    top: 100px;
-    margin-top: -20px;
+.formFields {
+    width: 300px;
+    height: 50px;
+    box-shadow: 5px 10px #888888;
 }
 
-.hole {
-    width: 40px;
-    height: 20px;
-    background-color: white;
-    position: relative;
-    top: 100px;
-    margin-top: -20px;
+.postButton2 {
+    background-color: yellow;
+    border: 5px solid black;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    margin: 15px 10px 20px 25px;
+    border-radius: 70%;
+    box-shadow: 5px 10px black;
 }
+
+    .postButton2:hover {
+        background-color: lawngreen;
+        outline: 10;
+    }

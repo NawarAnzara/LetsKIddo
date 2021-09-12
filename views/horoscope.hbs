@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/horoscope.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Lets Kiddo!</title>
+</head>
+<body>
+
+
+    <nav>
+
+
+        <h4 id="letsKiddoTitle">Lets Kiddo!</h4>
+
+        <div class="user-wrapper">
+            <img src="{{PictureUrl}}" alt="Sadita ahmed" width="30px" height="30px">
+            <div>
+                <h4>{{Name}}</h4>
+                <small> {{AgeGroup}}, {{UserID}} </small>
+            </div>
+
+        </div>
+
+
+    </nav>
+    <div style=" background-color: orange;">
+        <button class="btn second" onclick="window.location.href='/HomePage';"><strong>Home</strong></button>
+        <button class="btn second" onclick="window.location.href='/friendList';"><strong>Friends list</strong></button>
+        <button class="btn second" onclick="window.location.href='/games';"><strong>Games</strong></button>
+        <button class="btn second" onclick="window.location.href='/learnFun';"><strong>Learn fun</strong></button>
+        <button class="btn second" onclick="window.location.href='/profile';"><strong>Profile</strong></button>
+        <button class="btn second" onclick="window.location.href='/horoscope';"><strong>horoscope</strong></button>
+        <button class="btn second" onclick="window.location.href='/';"><strong>Log Out</strong></button>
+
+    </div>
+
+    <h1 style="text-align: center; background-color: yellow;">Find what your horoscope says about you, Kiddo!</h1>
+
+    <form class="loginForm" action="/auth/horoscope" method="post">
+
+   <!--  <input type="radio" id="January 20 - February 18" name="horoscopeType" value="2">
+        <label for="January 20 - February 18" style="font-family: 'Architects Daughter', cursive;">January 20 - February 18</label> -->
+
+<!--        <input type="radio" id="February 19 - March 20" name="horoscopeType" value="February 19 - March 20">
+        <label for="February 19 - March 20" style="font-family: 'Architects Daughter', cursive;">February 19 - March 20</label>
+
+        <input type="radio" id="March 21 - April 19" name="horoscopeType" value="March 21 - April 19">
+        <label for="March 21 - April 19" style="font-family: 'Architects Daughter', cursive;">March 21 - April 19</label>
+
+        <input type="radio" id="April 20 - May 20" name="horoscopeType" value="April 20 - May 20">
+        <label for="April 20 - May 20" style="font-family: 'Architects Daughter', cursive;">April 20 - May 20</label>
+
+        <input type="radio" id="May 21 - June 20" name="horoscopeType" value="May 21 - June 20">
+        <label for="May 21 - June 20" style="font-family: 'Architects Daughter', cursive;">May 21 - June 20</label>
+
+        <input type="radio" id="June 21 - July 22" name="horoscopeType" value="June 21 - July 22">
+        <label for="June 21 - July 22" style="font-family: 'Architects Daughter', cursive;">June 21 - July 22</label>
+
+        <input type="radio" id="July 23 - August 22" name="horoscopeType" value="July 23 - August 22">
+        <label for="July 23 - August 22" style="font-family: 'Architects Daughter', cursive;">July 23 - August 22</label>
+
+        <input type="radio" id="September 23 - October 22" name="horoscopeType" value="September 23 - October 22">
+        <label for="September 23 - October 22" style="font-family: 'Architects Daughter', cursive;">September 23 - October 22</label>
+
+        <input type="radio" id="October 23 - November 21" name="horoscopeType" value="October 23 - November 21">
+        <label for="October 23 - November 21" style="font-family: 'Architects Daughter', cursive;">October 23 - November 21</label>
+
+        <input type="radio" id="November 22 - December 21" name="horoscopeType" value="November 22 - December 21">
+        <label for="November 22 - December 21" style="font-family: 'Architects Daughter', cursive;">November 22 - December 21</label>
+
+        <input type="radio" id="December 22 - January 19" name="horoscopeType" value="December 22 - January 19">
+        <label for="December 22 - January 19" style="font-family: 'Architects Daughter', cursive;">December 22 - January 19</label>   
+    -->
+
+
+         <label for="horoscopeType" style="font-family: 'Architects Daughter', cursive;"><strong>Kiddo, what's your horoscope?</strong></label><br>
+       <select id="horoscopeType" name="horoscopeType" size="4" multiple>
+           <option value="January 20 - February 18">January 20 - February 18</option>
+           <option value="February 19 - March 20">February 19 - March 20</option>
+           <option value="March 21 - April 19">March 21 - April 19</option>
+           <option value="April 20 - May 20">April 20 - May 20</option>
+           <option value="May 21 - June 20">May 21 - June 20</option>
+           <option value="June 21 - July 22">June 21 - July 22</option>
+           <option value="July 23 - August 22">July 23 - August 22</option>
+
+           <option value="September 23 - October 22">September 23 - October 22</option>
+           <option value="October 23 - November 21">October 23 - November 21</option>
+           <option value="November 22 - December 21">November 22 - December 21</option>
+           <option value="December 22 - January 19">December 22 - January 19</option>
+       </select><br><br>
+   
+
+        <button class="postButton2" type="submit">Check your horoscope</button>
+    </form>
+    <div class="horoscopeDes">
+        <h4>
+            <strong>
+                {{horoscopeDes}}
+            </strong>
+        </h4>
+    </div>
+
