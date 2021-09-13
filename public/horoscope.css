@@ -63,7 +63,7 @@ body {
     background-color: #CF9FFF;
     position: relative;
     top: 200px;
-    left: 200px;
+    left: 450px;
     padding: 50px;
     width: 800px;
     height: 290px;
@@ -314,8 +314,10 @@ nav {
 .loginForm {
     background-color: yellow;
     text-align: center;
-    width: 400px;
-    height: 150px;
+    width: 500px;
+    height: 250px;
+    position: relative;
+    left: 180px;
     margin: 100px 0px 0px 420px; /*top, right, bottom, left*/
     box-shadow: 5px 10px 5px black;
     border: 10px solid black;
