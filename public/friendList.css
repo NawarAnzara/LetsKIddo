@@ -83,7 +83,7 @@
     width: 150px;
     height: 150px;
     border-radius: 70%;
-    box-shadow: 5px 5px 5px yellow;
+    box-shadow: 10px 10px 10px black;
 }
 
 #friendName {
