@@ -7,6 +7,7 @@ canvas {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 10px 10px 5px #888888;
 }
 
 #snakeGame {
@@ -28,12 +29,12 @@ canvas {
     /*margin: 20px 900px;*/
     position: relative;
     top: 30px;
-    left: 900px;
+    left: 800px;
     border-radius: 12px;
 }
 .gameButton:hover{
     background-color: yellow;
-    outline: 80;
+    outline: 10;
 }
 
 /*End of Pac man games*/

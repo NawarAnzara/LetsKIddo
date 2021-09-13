@@ -1,22 +1,4 @@
-/*Pac man Games*/
-canvas {
-    border: 1px solid white;
-    left: 50px;
-    top: 100px;
-    background: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-#snakeGame {
-    box-shadow: 5px 10px #888888;
-    position: absolute;
-    top: 500px;
-    left: 400px
-}
-
-/*End of Pac man games*/
 
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
@@ -56,7 +38,12 @@ body {
     background-image: url("https://i.ibb.co/Hh4zNMn/splash.jpg");
     height: 200%;
 }
-
+.moveButtons{
+    position: relative;
+    left: -100px;
+    top: 100px
+    
+}
 .postButton2 {
     background-color: lawngreen;
     border: 5px solid black;
@@ -64,12 +51,123 @@ body {
     padding: 20px;
     text-align: center;
     font-size: 20px;
-    margin: 4px 500px;
+    margin: 10px 700px;
     border-radius: 12px;
+    width: 500px;
+    box-shadow: 10px 10px grey;
 }
 
     .postButton2:hover {
         background-color: yellow;
+        outline: 10;
+    }
+
+.postButton3 {
+    background-color: lawngreen;
+    border: 5px solid black;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 700px;
+    border-radius: 12px;
+    width: 500px;
+    box-shadow: 10px 10px grey;
+}
+
+    .postButton3:hover {
+        background-color: red;
+        outline: 10;
+    }
+
+.postButton4 {
+    background-color: lawngreen;
+    width: 500px;
+    border: 5px solid black;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 700px;
+    box-shadow: 10px 10px grey;
+    border-radius: 12px;
+}
+
+    .postButton4:hover {
+        background-color: blue;
+        outline: 10;
+    }
+
+.postButton5 {
+    background-color: lawngreen;
+    width: 500px;
+    border: 5px solid black;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 700px;
+    border-radius: 12px;
+    box-shadow: 10px 10px grey;
+}
+
+    .postButton5:hover {
+        background-color: palevioletred;
+        outline: 10;
+    }
+
+.postButton6 {
+    background-color: lawngreen;
+    width: 500px;
+    border: 5px solid black;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 700px;
+    border-radius: 12px;
+    box-shadow: 10px 10px grey;
+}
+
+    .postButton6:hover {
+        background-color: deeppink;
+        outline: 10;
+    }
+
+.postButton7 {
+    background-color: lawngreen;
+    width: 500px;
+    border: 5px solid black;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 700px;
+    border-radius: 12px;
+    box-shadow: 10px 10px grey;
+}
+
+    .postButton7:hover {
+        background-color: purple;
+        outline: 10;
+    }
+
+.postButton8 {
+    background-color: lawngreen;
+    width: 500px;
+    border: 5px solid black;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 700px;
+    border-radius: 12px;
+    box-shadow: 10px 10px grey;
+    
+}
+
+    .postButton8:hover {
+        background-color: darkcyan;
         outline: 10;
     }
 
